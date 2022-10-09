@@ -1,0 +1,247 @@
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+
+
+ :root {
+   --desaturated-red: hsl(0, 36%, 70%);
+   --soft-red: hsl(0, 93%, 68%);
+   --dark-grayish-red: hsl(0, 6%, 24%);
+ }
+
+ * {
+   box-sizing: inherit;
+   margin: 0;
+   padding: 0;
+ }
+
+ body {
+   box-sizing: border-box;
+   margin: 0;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 15px;
+   background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+ }
+
+ img {
+   max-width: 100%;
+ }
+
+ .container-fluid {
+   width: 100%;
+   max-height: 100vh;
+ }
+
+ .container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ /* Logo */
+ .img {
+   align-self: flex-start;
+   margin: 3rem;
+ }
+
+
+ /* img Main */
+ .main {
+   width: 100%;
+ }
+
+ /* article area */
+ article {
+   display: block;
+   margin: 30px;
+   max-width: 600px;
+   text-align: center;
+   margin-top: 4rem;
+ }
+
+ .heading {
+   text-transform: uppercase;
+   font-size: 3.5rem;
+   letter-spacing: 1.1rem;
+   font-weight: 600;
+ }
+
+ .heading span {
+   font-weight: 300;
+   color: var(--desaturated-red);
+ }
+
+ article p {
+   font-size: 1.1rem;
+   line-height: 1.5;
+   color: var(--desaturated-red);
+   font-weight: 600;
+   width: 380px;
+   margin: 2rem auto;
+ }
+
+ .input {
+   width: 100%;
+   position: relative;
+ }
+
+ .input input+label {
+   position: absolute;
+   color: var(--soft-red);
+   top: 30px;
+   left: 30px;
+   visibility: hidden;
+   transition: all 0.4s;
+   opacity: 0;
+ }
+
+ .input input:invalid+label {
+   top: 60px;
+   left: 30px;
+   visibility: visible;
+   opacity: 1;
+ }
+
+ .input input {
+   padding: 17px 23px;
+   border: 1px solid var(--desaturated-red);
+   border-radius: 25px;
+   width: 100%;
+   font-family: inherit;
+   background-color: transparent;
+   color: #000;
+   font-weight: 400;
+ }
+
+ .input input::placeholder {
+   color: var(--desaturated-red);
+   opacity: 0.5;
+ }
+
+ .input input:focus {
+   outline: none;
+   border: 2px solid var(--soft-red);
+ }
+
+ .input input:invalid~.error-icon {
+   display: block;
+ }
+
+ .input .arrow-icon {
+   cursor: pointer;
+   position: absolute;
+   display: inline-block;
+   width: 110px;
+   height: 100%;
+   border-radius: 25px;
+   top: 0;
+   right: 0;
+   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+   box-shadow: 1px 8px 15px hsla(0, 80%, 86%, 0.904);
+   transition: all .4s;
+ }
+
+ .input .arrow-icon:hover {
+   box-shadow: 1px 10px 25px hsl(0, 45%, 78%);
+   background-image: linear-gradient(135deg, hsl(0, 87%, 94%), hsl(0, 77%, 88%));
+ }
+
+ .arrow-icon img {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+ }
+
+ .error-icon {
+   display: none;
+   position: absolute;
+   right: 130px;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+
+ .hero-desktop {
+   display: none;
+ }
+
+
+ /* footer credit */
+ footer {
+   text-align: center;
+   line-height: 1.5;
+   margin: 30px;
+ }
+
+ footer a {
+   text-transform: uppercase;
+   text-decoration: none;
+   background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+   background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+ }
+
+ @media only screen and (min-width: 1200px) {
+   .container-fluid {
+     display: flex;
+   }
+
+   .container .main {
+     display: none;
+   }
+
+   .container {
+     background: url('images/bg-pattern-desktop.svg');
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .img {
+     margin: 70px;
+     width: 450px;
+     align-self: center;
+   }
+
+   .img img {
+     margin: 0;
+     width: 150px;
+   }
+
+   .article {
+     text-align: start;
+     width: 450px;
+     margin: 70px;
+   }
+
+   .heading {
+     font-size: 70px;
+   }
+
+   .article p {
+     width: auto;
+
+   }
+
+   .hero-desktop {
+     display: block;
+     height: 100%;
+   }
+ }
+
+ @media (max-width: 400px) {
+
+   article h1 {
+     font-size: 3rem !important;
+   }
+
+   article p {}
+
+   .container-fluid {
+     width: 400px;
+     margin: 0 auto;
+   }
+
+
+ }
